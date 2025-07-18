@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IdealAI Support Widget Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Optional: futuristic font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.jpg" alt="IdealAI Logo" class="logo" />
+    <h1>
+      IdealAI <span class="gradient-text">Support Widget</span> Demo
+    </h1>
+    <p>See how the live chat widget would look on your website.</p>
+  </div>
+
+  <!-- Optional custom widget -->
+  <div id="support-widget" class="widget">
+    <div class="widget-header">💬 Chat with us!</div>
+    <div class="widget-body">
+      <p>Hi! How can we help you today?</p>
+      <input type="text" placeholder="Type your message..." />
+    </div>
+    <button class="widget-toggle">💬</button>
+  </div>
+
+  <script>
+    const widget = document.getElementById("support-widget");
+    const toggle = document.querySelector(".widget-toggle");
+    toggle.addEventListener("click", () => {
+      widget.style.display = widget.style.display === "flex" ? "none" : "flex";
+    });
+  </script>
+
+  <!-- Freshdesk widget script -->
+  <script>
+    window.fwSettings = {
+      widget_id: 501000002333,
+    };
+    (function () {
+      if (typeof window.FreshworksWidget !== "function") {
+        var n = function () {
+          n.q.push(arguments);
+        };
+        n.q = [];
+        window.FreshworksWidget = n;
+      }
+    })();
+  </script>
+  <script
+    type="text/javascript"
+    src="https://mec-widget.freshworks.com/widgets/501000002333.js"
+    async
+    defer
+  ></script>
+</body>
+</html>
